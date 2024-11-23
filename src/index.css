@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Geologica:wght@100..900&family=Jost:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body{
+    font-family: "Jost", sans-serif;
+    font-optical-sizing: auto;
+    /* font-weight: <weight>; */
+    font-style: normal;
+    
+  }
+
+}
+
+
+
+@layer components{
+
+  @keyframes fade-up{
+    from{
+      opacity: 0;
+      transform: translateY(-20%);
+    }
+    to{
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }  
+
+  @keyframes fade-down{
+    from{
+      opacity: 0;
+      transform: translateY(20%);
+    }
+    to{
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }  
+
+  .my-container{
+    @apply max-sm:px-5 mx-auto max-sm:w-full sm:w-[90%] md:w-[90%] lg:w-[90%] xl:w-[1200px]
+  }
+
+  .covid-medi-cont .covid-medi-info:nth-child(odd){
+    @apply flex-col animate-[fade-up_1s]
+  }
+
+  .covid-medi-cont .covid-medi-info:nth-child(even){
+    @apply flex-col-reverse max-sm:flex-col animate-[fade-down_1s]
+  }
+
+  .slice-element{
+    border-radius: .5rem .5rem 100% .5rem;
+  }
+
+  @keyframes pop-in{
+    from{
+      opacity: 0;
+      scale: .9;
+    }
+    to{
+      opacity: 1;
+      scale: 1;
+    }
+  }  
+
+}
+
+@layer utilities{
+  .primary-text{
+    @apply text-[#003569]
+  }
+  .primary-bg{
+    @apply bg-[#003569]
+  }
+  .green-bg{
+    @apply bg-[#174150]
+  }
+  .green-text{
+    @apply text-[#174150]
+  }
+  .green-border{
+    @apply border-[#174150]
+  }
+}
